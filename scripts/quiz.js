@@ -46,9 +46,11 @@ function exibirPerguntas() {
   });
 }
 
-// Função para calcular o resultado do quiz
-async function calcularResultado() {
-  const paises = await carregarPaises();
+async function carregarPaises() {
+  const response = await fetch('paises.json'); // Carrega o arquivo JSON
+  const paises = await response.json(); // Converte a resposta em um objeto JavaScript
+  return paises;
+}
 
   // Mapeia as respostas do quiz para os critérios dos países
   const criterios = {
