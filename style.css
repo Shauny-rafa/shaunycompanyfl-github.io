@@ -30,9 +30,10 @@ nav {
     text-decoration: none;
     color: #0044cc;
     font-weight: 400;
-
 }
 
+/* Hero Section */
+.hero {
     text-align: center;
     padding: 100px 20px;
     background-image: url('plane.jpg');
@@ -44,6 +45,11 @@ nav {
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+/* Oculta o texto "Experience The Magic Of Flight!" */
+.hero h1 {
+    display: none;
 }
 
 /* Aumentando a logo e adicionando transparência azul */
@@ -60,13 +66,7 @@ nav {
     opacity: 0.9;
 }
 
-
-.logo-container img {
-    height: 120px; /* Ajuste conforme necessário */
-    width: auto;
-    margin-bottom: 20px;
-}
-
+/* Botão Principal */
 .btn-primary {
     background: #cc0000; /* Vermelho */
     color: white;
