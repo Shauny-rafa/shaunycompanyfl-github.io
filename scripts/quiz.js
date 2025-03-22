@@ -46,11 +46,9 @@ function exibirPerguntas() {
   });
 }
 
-async function carregarPaises() {
-  const response = await fetch('paises.json'); // Carrega o arquivo JSON
-  const paises = await response.json(); // Converte a resposta em um objeto JavaScript
-  return paises;
-}
+// Função para calcular o resultado do quiz
+async function calcularResultado() {
+  const paises = await carregarPaises();
 
   // Mapeia as respostas do quiz para os critérios dos países
   const criterios = {
@@ -120,17 +118,4 @@ async function carregarPaises() {
       <p><strong>Clima:</strong> ${paisRecomendado.climate}</p>
       <p><strong>Custo de vida:</strong> ${paisRecomendado.costLevel}</p>
       <p><strong>Idioma:</strong> ${paisRecomendado.tags.language.join(', ')}</p>
-      <p><strong>Áreas acadêmicas de destaque:</strong> ${paisRecomendado.tags.academic.join(', ')}</p>
-      <p><strong>Segurança:</strong> ${paisRecomendado.safety}/10</p>
-      <p><strong>Ranking de educação:</strong> ${paisRecomendado.educationRank}/10</p>
-    `;
-  } else {
-    resultadoDiv.innerHTML = `<p>Nenhum país encontrado com base nas suas respostas. Tente novamente!</p>`;
-  }
-}
-
-// Exibe as perguntas do quiz
-exibirPerguntas();
-
-// Adiciona evento ao botão de enviar
-submitBtn.addEventListener('click', calcularResultado);
+     
