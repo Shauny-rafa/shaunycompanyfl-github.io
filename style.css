@@ -13,15 +13,8 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo img {
-    height: 60px; /* Ajuste conforme necessário */
-    width: auto;
 }
 
 .nav-links {
@@ -39,18 +32,24 @@ nav {
     font-weight: 400;
 }
 
-/* Hero Section */
+/* Hero Section (com a Logo no centro) */
 .hero {
     text-align: center;
     padding: 100px 20px;
     background-image: url('plane.jpg');
     background-size: cover;
+    background-position: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero h1 {
-    font-size: 36px;
-    font-weight: 600;
+.logo-container img {
+    height: 120px; /* Ajuste conforme necessário */
+    width: auto;
+    margin-bottom: 20px;
 }
 
 .btn-primary {
