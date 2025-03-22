@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Shauny Company</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projeto-russia.html">Projeto Rússia</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="chatbot.html">Chatbot</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <section class="quiz">
+    <h1>Qual destino combina com você?</h1>
+    <form id="quiz-form">
+      <div class="pergunta">
+        <p>1. Qual seu orçamento?</p>
+        <input type="radio" name="orcamento" value="baixo"> Até R$ 3.000<br>
+        <input type="radio" name="orcamento" value="medio"> R$ 3.000 - R$ 6.000<br>
+        <input type="radio" name="orcamento" value="alto"> Acima de R$ 6.000<br>
+      </div>
+      <!-- Adicione mais perguntas aqui -->
+      <button type="submit" class="btn">Ver Resultado</button>
+    </form>
+    <div id="resultado"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Shauny Company. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
