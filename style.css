@@ -1,120 +1,164 @@
+/* Variáveis CSS */
+:root {
+    --primary-color: #A2D5F2;
+    --secondary-color: #FF6B6B;
+    --text-color: #333333;
+    --background-color: #F5F5F5;
+    --container-bg-color: #ffffff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --font-family: 'Open Sans', sans-serif;
+}
+
+/* Estilos Globais */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
-    background-color: #e6f0ff; 
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
+/* Header */
 header {
-    background: white;
+    background-color: var(--primary-color);
     padding: 20px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #0044cc;
-    font-weight: 400;
-}
-
-.hero {
     text-align: center;
-    padding: 100px 20px;
-    background-image: url('plane.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+}
+
+/* Navegação */
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Seção de Quiz */
+.quiz {
+    padding: 20px;
+    text-align: center;
+}
+
+#quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.pergunta {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.pergunta p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.opcao {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--container-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.hero h1 {
-    display: none;
+.opcao:hover {
+    background-color: #f0f0f0;
+    border-color: var(--secondary-color);
 }
 
-.logo-container img {
-    height: 250px;
-    width: auto;
-    opacity: 0.7; 
-    filter: brightness(1.1) contrast(0.9) drop-shadow(0px 0px 10px rgba(0, 68, 204, 0.3)); 
-    transition: opacity 0.3s ease-in-out;
+.opcao.selecionada {
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
 }
 
-.logo-container img:hover {
-    opacity: 0.9;
+.opcao i {
+    margin-right: 10px;
+    font-size: 1.2rem;
 }
 
-.btn-primary {
-    background: #cc0000; 
+.opcao span {
+    font-size: 1rem;
+}
+
+/* Botão de Enviar */
+#submit-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.destinations {
-    text-align: center;
-    padding: 50px 20px;
+#submit-btn:hover {
+    background-color: #e65a5a;
 }
 
-.destinations-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+/* Resultado do Quiz */
+#resultado {
     margin-top: 20px;
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
-.destination-card {
-    background: white;
+#resultado h2 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+#resultado p {
+    font-size: 1rem;
+    color: #555555;
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
     padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.destination-card img {
-    width: 150px;
-    border-radius: 10px;
-}
-
-.booking {
     text-align: center;
-    padding: 50px 20px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: var(--text-color);
 }
 
-.booking-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+    }
 
-.booking-step {
-    padding: 15px 30px;
-    border-radius: 10px;
-    background: white;
-    border: 2px solid #0044cc;
-    color: #0044cc;
-}
+    nav a {
+        font-size: 1rem;
+    }
 
-.blue {
-    background: #cc0000;
-    color: white;
+    .quiz {
+        padding: 10px;
+    }
+
+    #quiz-container, #resultado {
+        padding: 10px;
+    }
 }
