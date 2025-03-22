@@ -19,10 +19,9 @@ nav {
     margin: 0 auto;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 600;
-    color: #0044cc; /* Azul escuro */
+.logo img {
+    height: 60px; /* Ajuste conforme necessário */
+    width: auto;
 }
 
 .nav-links {
@@ -127,4 +126,3 @@ nav {
     background: #0044cc;
     color: white;
 }
-
